@@ -55,7 +55,7 @@ def process_file(filename):
         text = file.read()
     
     new_text = substitute_characters(text)
-    new_text = insert_spaces(text)
+    new_text = insert_spaces(new_text)
     
     with open(filename, 'w', encoding='utf-8') as file:
         file.write(new_text)
