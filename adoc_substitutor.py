@@ -1,15 +1,20 @@
+"""
+Asciidoctor to Latex
+"""
 import re
 import sys
 
 def substitute_patterns(text):
     """
+    Asciidoctor -> Latex
+    
     Replace specific patterns in the given text.
 
     Args:
         text (str): The text to process.
 
     Returns:
-        str: The text with "stem:[ some words]" and "latexmath:[ some words]" replaced by "$some words$".
+        str: The text with "stem:[...]" and "latexmath:[...]" replaced by "$...$".
     """
     pattern = r'(stem|latexmath):\[\s*(.*?)\s*\]'
     return re.sub(pattern, r'$\2$', text)
